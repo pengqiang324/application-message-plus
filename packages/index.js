@@ -1,5 +1,5 @@
 
-const version = "1.0.0"
+const version = "2.0.3"
 
 // const METHODS = require('./post-message.js')
 import METHODS, { 
@@ -15,7 +15,8 @@ import METHODS, {
     GO,
     BACk,
     FORWARD,
-    PREVIEW 
+    PREVIEW,
+    SKIP
 } from './post-message'
 import './mutationObserve'
 // 定义 install 方法, 接收 Vue 作为参数。
@@ -48,7 +49,8 @@ export {
     GO,
     BACk,
     FORWARD,
-    PREVIEW 
+    PREVIEW,
+    SKIP
 }; // 按需引入
 
 export default {

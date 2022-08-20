@@ -13,7 +13,8 @@ import {
     GO as go,
     BACK as back,
     PREVIEWIMAGE as previewImage,
-    SETHEIGHT
+    SETHEIGHT,
+    APPLICATIONSKIP as applicationSkip
 } from './observe-types'
 import { serialize } from './util'
 /**
@@ -191,6 +192,21 @@ MESSAGE_TYPE.forEach((type) => {
     })
 }
 
+/**
+ * 系统应用间跳转
+ * @author pengqiang
+ * @param {String} code 菜单应用 code
+ * @date 2022/08/16 14:27
+*/
+const SKIP = (path, data) => {
+    postMessage({
+        type: applicationSkip,
+        data: {
+            path,
+            ...data
+        }
+    })
+}
 
 /**
  * Modal 模态对话框
@@ -319,7 +335,8 @@ export default {
     GO,
     BACk,
     FORWARD,
-    PREVIEW
+    PREVIEW,
+    SKIP
 }
 
 export { 
@@ -335,5 +352,6 @@ export {
     GO,
     BACk,
     FORWARD,
-    PREVIEW 
+    PREVIEW,
+    SKIP
 } // 按需引入
